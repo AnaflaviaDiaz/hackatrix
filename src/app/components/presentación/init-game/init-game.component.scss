@@ -7,10 +7,10 @@
   }
 
   .set-logo {
-    padding: 30px;
+    padding: 4.5rem 0.5rem !important;
     text-align: center;
     img {
-      height: 80px;
+      height: 6rem;
     }
   }
 
@@ -25,8 +25,18 @@
   background: #21C074;
   border: none;
   border-radius: 30.5px;
-  font-size: 18px;
+  font-size: 1.5rem;
   height: 60px;
+}
+
+.custom-btn:active {
+  color: #fff;
+  background-color: #21C074;
+  border-color: #21C074;
+}
+
+.custom-btn:focus {
+  box-shadow: 0 0 0 0.2rem rgba(33, 192, 116, 0.5);
 }
 
 .set-loading {

@@ -25,7 +25,7 @@ export class StateService {
       ]
 
     },
-    
+
     name: '',
     questions: [
       'pregunta uno', 'pregunta 2', 'pregunta 3'
@@ -36,9 +36,9 @@ export class StateService {
     lectura: {
       titulo: 'lectura uno',
       texto: `texto lectura uno texto lectura unotexto lectura
-       uno texto lectura uno 
+       uno texto lectura uno
        texto lectura uno texto lectura unotexto lectura uno texto lectura uno
-       texto lectura uno texto lectura unotexto lectura uno texto lectura uno 
+       texto lectura uno texto lectura unotexto lectura uno texto lectura uno
        texto lectura uno texto lectura unotexto lectura uno texto lectura uno
        texto lectura uno texto lectura unotexto lectura uno texto lectura uno`,
 

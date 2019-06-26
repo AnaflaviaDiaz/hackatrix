@@ -7,17 +7,12 @@ import { Location } from '@angular/common';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  constructor(private Location: Location){
+  constructor(
+    private location: Location
+  ) { }
+  route = ['cuento-1', 'faces', 'reflexion-1'];
 
-  }
-  title = 'hackatrix';
-public route=['cuento-1', 'faces', 'reflexion-1'];
-
-  navegar(){
-
-  }
-
-  atras() {
-    this.Location.back();
+  back() {
+    this.location.back();
   }
 }

@@ -9,14 +9,17 @@ import { Location } from '@angular/common';
   styleUrls: ['./lectura.component.scss']
 })
 export class LecturaComponent implements OnInit {
-public state : any;
-  constructor( private Location: Location,private _activeRoute: ActivatedRoute,
-    private _router: Router, private stateService: StateService) { 
-console.log(this._activeRoute.snapshot)
-const route = this._activeRoute.snapshot.routeConfig.path; 
-this.state = this.getData(route);
-console.log(this.state);
-}
+  public state: any;
+  constructor(
+    private location: Location,
+    private activeRoute: ActivatedRoute,
+    private router: Router,
+    private stateService: StateService) {
+    console.log(this.activeRoute.snapshot);
+    const route = this.activeRoute.snapshot.routeConfig.path;
+    this.state = this.getData(route);
+    console.log(this.state);
+  }
 
   ngOnInit() {
   }
@@ -32,21 +35,18 @@ console.log(this.state);
     }
   }
   atras() {
-    this.Location.back();
+    this.location.back();
   }
-  goGame(){
-const route = this._activeRoute.snapshot.routeConfig.path; 
-    switch(route){
+  goGame() {
+    const route = this.activeRoute.snapshot.routeConfig.path;
+    switch (route) {
       case 'cuento-1':
-        this._router.navigate(['/faces']);
+        this.router.navigate(['/faces']);
         return;
       case 'cuento-2':
-        // this._router.navigate(['/linea-de-juego']);
         return;
       case 'cuento-3':
-        // this._router.navigate(['/linea-de-juego']);
         return;
     }
-
   }
 }

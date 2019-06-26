@@ -1,8 +1,7 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { StateService } from 'src/app/services/state.service';
 import { Router } from '@angular/router';
 import { Location } from '@angular/common';
-import { log } from 'util';
 
 @Component({
   selector: 'app-face',
@@ -10,23 +9,25 @@ import { log } from 'util';
   styleUrls: ['./face.component.css']
 })
 export class FaceComponent implements OnInit {
-  public state: any = {};
-  public curretIndexQuestion: number = 0;
-  public question: any = {};
-  public progress: number = 0;
-  constructor(private Location: Location, private stateService: StateService, private _router: Router) {
+  state: any = {};
+  curretIndexQuestion = 0;
+  question: any = {};
+  progress = 0;
+  constructor(
+    private location: Location,
+    private stateService: StateService,
+    private router: Router
+  ) {
     this.state = this.stateService.levels[0].game;
     this.question = this.state.questions[this.curretIndexQuestion];
-
   }
 
-  ngOnInit() {
-  }
-  irAReflexion() {
-    this._router.navigate(['/reflexion-1'])
-  }
+  ngOnInit() { }
+
+  irAReflexion() { this.router.navigate(['/reflexion-1']); }
+
   reset() {
-    // this.state = this.stateService.levels[0].game;
+    this.state = this.stateService.levels[0].game;
     this.question = this.state.questions[this.curretIndexQuestion];
     this.state = {};
     this.curretIndexQuestion = 0;
@@ -34,15 +35,12 @@ export class FaceComponent implements OnInit {
     this.progress = 0;
   }
 
-  atras() {
-    this.Location.back();
-  }
+  back() { this.location.back(); }
 
   select(response) {
-
     if (this.question.response === response) {
       console.log(this.question.response, 'correct response:', response);
-      console.log(this.curretIndexQuestion)
+      console.log(this.curretIndexQuestion);
       if (this.curretIndexQuestion === 2) {
         this.progress = this.progress + 1;
         setTimeout(() => this.irAReflexion(), 1500);
@@ -54,7 +52,6 @@ export class FaceComponent implements OnInit {
         this.progress = this.progress + 1;
       }
     }
-
   }
 
 }

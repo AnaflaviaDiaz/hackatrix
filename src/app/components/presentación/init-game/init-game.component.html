@@ -3,15 +3,14 @@
     <img src="assets/images/logo-verde.png" alt="logo">
   </figure>
   <div class="container">
-    <div *ngIf="isLoading" class="set-loading">Loading...</div>
+    <div *ngIf="isLoading" class="set-loading">Cargando...</div>
     <div *ngIf="!isLoading" class="card text-center">
       <div class="card-body">
         <figure class="set-mounstruo">
           <img src="assets/images/mounstruo-enojado.svg" alt="imagen">
         </figure>
         <div class="button-container">
-            <button class="btn btn-primary btn-block custom-btn" (click)="navegar()">Jugar</button>
-            <button class="btn btn-primary btn-block custom-btn">Salir</button>
+          <button class="btn btn-primary btn-block custom-btn" (click)="navigate()">Jugar</button>
         </div>
       </div>
     </div>

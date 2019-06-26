@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
-import { StateService } from 'src/app/services/state.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-game-line',
@@ -9,14 +8,13 @@ import { StateService } from 'src/app/services/state.service';
 })
 export class GameLineComponent implements OnInit {
 
-  constructor(private _activeRoute: ActivatedRoute,
-    private _router: Router) { }
+  constructor(
+    private router: Router) { }
 
-  ngOnInit() {
-  }
+  ngOnInit() { }
 
   navegar(idNivel) {
-    this._router.navigate(['/cuento-' + idNivel]);
+    this.router.navigate(['/cuento-' + idNivel]);
   }
 
 }

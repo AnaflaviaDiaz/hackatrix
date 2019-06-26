@@ -7,11 +7,11 @@ import { Router } from '@angular/router';
   styleUrls: ['./init-game.component.scss']
 })
 export class InitGameComponent implements OnInit {
-  public isLoading = true;
+  isLoading = true;
 
-  constructor(private _router: Router) {
-    
-   }
+  constructor(
+    private router: Router
+  ) { }
 
   ngOnInit() {
     this.handleLoading();
@@ -23,7 +23,7 @@ export class InitGameComponent implements OnInit {
     }, 1000);
   }
 
-  navegar(){
-    this._router.navigate(['/linea-de-juego']);
+  navigate() {
+    this.router.navigate(['/linea-de-juego']);
   }
 }
